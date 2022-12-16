@@ -1,13 +1,13 @@
-
-from library import *;
-import streamlit as st;
-import pandas as pd;
+from library import *
+import streamlit as st
+import pandas as pd
 
 countries = ['Sri Lanka','United States','India','Japan','China']
 statistics = ['cases','deaths','recovered']
 country = st.selectbox('Select Your Country',countries)
 
-days = st.sidebar.slider('The Number Of Days You Want',min_value=1,max_value=365)
+st.write('Your Selected Country Is',countries)
+days = st.sidebar.slider('The Number Of Days You Want',min_value=1,max_value=200)
 s_stats = st.sidebar.multiselect('Select Statistics',statistics)
 
 hist_cases = get_historic_cases(country,days)
